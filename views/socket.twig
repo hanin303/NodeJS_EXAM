@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Alert</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <h1>Salary Alert</h1>
+    <div id="alert"></div>
+    <script>
+        const socket = io.connect("http://localhost:3000");
+        //we use on listen for events emitted by the server 
+        socket.on('msg', (data) => {
+            //document.getElementById('alert').innerHTML = data.message;
+        alert(data.message);
+
+        });
+        
+    </script>
+    
+</body>
+</html>
